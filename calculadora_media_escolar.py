@@ -1,4 +1,4 @@
-print("Vamos calcular as suas 4 notas do ano, e descobrir se você passou de ano, ficou de recuperação ou foi reprovado! :)")
+print("Vamos calcular a média das suas notas, e descobrir se você passou de ano, ficou de recuperação ou foi reprovado! :)")
 
 def pegar_nota(numero):
 	nota = float(input(f"Nota {numero}: ").replace(",", "."))
@@ -7,13 +7,14 @@ def pegar_nota(numero):
 		nota = float(input(f"Nota {numero}: ").replace(",", "."))
 	return nota
 
-nota1 = pegar_nota(1)
-nota2 = pegar_nota(2)
-nota3 = pegar_nota(3)
-nota4 = pegar_nota(4)
+quantidade =int(input("Quantas notas deseja calcular? "))
+notas = []
+for i in range(quantidade):
+	nota = pegar_nota(i + 1)
+	notas.append(nota)
 
 
-media	= (nota1 + nota2 + nota3 + nota4) / 4
+media	= sum(notas) / len(notas)
 
 print(f"A sua média é: {media:.2f}")
 
